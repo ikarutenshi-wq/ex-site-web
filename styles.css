@@ -1,0 +1,16 @@
+.background{
+    background-color: black;
+}
+
+.produit img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.produit h2{
+    color: #1626c7 ;
+}
+h1, h2, h3, h4, h5, h6, p, span{
+    color: white;
+}
