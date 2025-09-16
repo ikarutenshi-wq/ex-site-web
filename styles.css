@@ -2,15 +2,54 @@
     background-color: black;
 }
 
-.produit img{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+.produit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 275px);
+    gap: 40px;
+    justify-items: center;
+    margin: 10px;
 }
 
-.produit h2{
-    color: #1626c7 ;
+.card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
 }
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: 300ms;
+    border-radius: 8px;
+}
+
+.card img:hover {
+    width: 250px;
+    height: 250px;
+}
+
+.card h2, h3 {
+    color: #ffffff;
+    margin: 15px 0 10px 0;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: #1626c7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #0f1a8a;
+}
+
 h1, h2, h3, h4, h5, h6, p, span{
     color: white;
 }
@@ -19,4 +58,29 @@ h1{
     text-align: center;
     padding: auto;
     
+}
+
+footer{
+    text-align: center;
+    padding: auto  ;
+    background-color: #222;
+    color: white;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.top button{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+
+}
+
+.top2 button{
+    position: absolute;
+    left: 20px;
+    top: 40px;
+
 }
