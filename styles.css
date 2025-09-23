@@ -4,7 +4,7 @@
 
 .produit-grid {
     display: grid;
-    grid-template-columns: repeat(4, 275px);
+    grid-template-columns: repeat(4, 375px);
     gap: 40px;
     justify-items: center;
     margin: 10px;
@@ -83,4 +83,84 @@ footer{
     left: 20px;
     top: 40px;
 
+}
+
+.popup2 {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup2 .popuptext2 {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    transition: opacity 0.3s;
+}
+
+.popup2 .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup2 .show {
+    visibility: visible;
+    opacity: 1;
+    animation: fadeIn 1s;
+}
+
+.popuptext#globalPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    width: 220px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px 0;
+    font-size: 1.2em;
+    transition: opacity 0.3s;
+}
+
+.popuptext#globalPopup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.descPopup {
+  position: fixed;
+  background-color: #555;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  left: 0;
+  top: 0;
+}
+
+.descPopup.show {
+  visibility: visible;
+  opacity: 1;
 }

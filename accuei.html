@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PCDISCOUNT</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body class="background">
     <header class="top">
@@ -20,29 +21,74 @@
           />
           <h2>PC rtx 5070</h2>
           <h2>Prix : 1600€</h2>
-          <button>Acheter</button>
-          <h3>Details</h3>
+          <button
+            class="popup"
+            onclick="myFunction()"
+            onclick="addToCart(1, 'PC RTX 5070', 1600)"
+          >
+            Acheter
+          </button>
+          <h3 class="popup2" onclick="showdesc(event, this)">
+            Details
+            <span class="descPopup"
+              >Processeur: Intel i7-13700K<br />
+              Carte Graphique: NVIDIA GeForce RTX 5070<br />RAM: 16 Go DDR4<br />
+              Stockage: SSD 1 To<br />
+              Alimentation: 650W<br />
+              Système d'exploitation: Windows 11</span
+            >
+          </h3>
         </div>
         <div class="card">
           <img src="./object img/819cOVjBRRL.jpg" alt="image" />
           <h2>PC rtx 5070 ti</h2>
           <h2>Prix : 1800€</h2>
-          <button>Acheter</button>
-          <h3>Details</h3>
+          <button class="popup" onclick="myFunction()">Acheter</button>
+          <h3 class="popup2" onclick="showdesc(event, this)">
+            Details
+            <span class="descPopup"
+              >Processeur: Ryzen 7 7700X<br />
+              Carte Graphique: NVIDIA GeForce RTX 5070ti<br />
+              RAM: 32 Go DDR5<br />
+              Stockage: SSD 2 To<br />
+              Alimentation: 800W<br />
+              Système d'exploitation: Windows 11</span
+            >
+          </h3>
         </div>
         <div class="card">
           <img src="./object img/images.jpg" alt="image" />
           <h2>PC rx 9070xt</h2>
           <h2>Prix : 1500€</h2>
-          <button>Acheter</button>
-          <h3>Details</h3>
+          <button class="popup" onclick="myFunction()">Acheter</button>
+          <h3 class="popup2" onclick="showdesc(event, this)">
+            Details
+            <span class="descPopup"
+              >Processeur: Ryzen 7 7800X3D<br />
+              Carte Graphique: AMD Radeon RX 9070XT <br />
+              RAM: 16 Go DDR5<br />
+              Stockage: SSD 1 To<br />
+              Alimentation: 800W<br />
+              Système d'exploitation: Windows 11</span
+            >
+          </h3>
         </div>
         <div class="card">
           <img src="./object img/pc-gamer-vengeance.jpg" alt="image" />
           <h2>PC rtx 5060</h2>
           <h2>Prix : 1200€</h2>
-          <button>Acheter</button>
-          <h3>Details</h3>
+          <button class="popup" onclick="myFunction()">Acheter</button>
+          <h3 class="popup2" onclick="showdesc(event, this)">
+            Details
+            <span class="descPopup"
+              >Processeur: Ryzen 7 7700X<br />
+              Carte Graphique: NVIDIA GeForce RTX 5060<br />
+              RAM: 16 Go DDR4<br />
+              Stockage: SSD 1 To<br />
+              Alimentation: 600W<br />
+              Système d'exploitation: Windows 11</span
+            >
+          </h3>
         </div>
         <div class="card">
           <img
@@ -51,10 +97,21 @@
           />
           <h2>PC rtx 4070</h2>
           <h2>Prix : 1000€</h2>
-          <button>Acheter</button>
-          <h3>Details</h3>
+          <button class="popup" onclick="myFunction()">Acheter</button>
+          <h3 class="popup2" onclick="showdesc(event, this)">
+            Details
+            <span class="descPopup"
+              >Processeur: Ryzen 5 5600 <br />
+              Carte Graphique: NVIDIA GeForce RTX 4070 <br />
+              RAM: 16 Go DDR4<br />
+              Stockage: SSD 512 To<br />
+              Alimentation: 500W<br />
+              Système d'exploitation: Windows 11</span
+            >
+          </h3>
         </div>
       </section>
+      <span class="popuptext" id="globalPopup">Ajouté au panier !</span>
     </main>
     <footer>
       <p>© 2025 Vente de produits</p>
