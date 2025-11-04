@@ -4,14 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PCDISCOUNT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body class="background">
     <header class="top">
       <h1>Bienvenue sur PCDISCOUNT</h1>
-      <button onclick="window.location.href='panier.html'">Panier🛒</button>
     </header>
+
+    <!-- Navbar pour le panier -->
+    <nav class="navbar navbar-dark fixed-top cart-nav">
+      <div class="container-fluid">
+        <div class="ml-auto">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#cart"
+          >
+            Panier (<span class="total-count"></span>)
+          </button>
+          <button class="clear-cart btn btn-danger ml-2">
+            Vider le panier
+          </button>
+        </div>
+      </div>
+    </nav>
     <main>
       <section class="produit-grid">
         <div class="card">
@@ -22,9 +46,10 @@
           <h2>PC rtx 5070</h2>
           <h2>Prix : 1600€</h2>
           <button
-            class="popup"
+            class="popup add-to-cart btn btn-primary"
             onclick="myFunction()"
-            onclick="addToCart(1, 'PC RTX 5070', 1600)"
+            data-name="PC rtx 5070"
+            data-price="1600"
           >
             Acheter
           </button>
@@ -43,7 +68,14 @@
           <img src="./object img/819cOVjBRRL.jpg" alt="image" />
           <h2>PC rtx 5070 ti</h2>
           <h2>Prix : 1800€</h2>
-          <button class="popup" onclick="myFunction()">Acheter</button>
+          <button
+            class="popup add-to-cart btn btn-primary"
+            onclick="myFunction()"
+            data-name="PC rtx 5070 ti"
+            data-price="1800"
+          >
+            Acheter
+          </button>
           <h3 class="popup2" onclick="showdesc(event, this)">
             Details
             <span class="descPopup"
@@ -60,7 +92,14 @@
           <img src="./object img/images.jpg" alt="image" />
           <h2>PC rx 9070xt</h2>
           <h2>Prix : 1500€</h2>
-          <button class="popup" onclick="myFunction()">Acheter</button>
+          <button
+            class="popup add-to-cart btn btn-primary"
+            onclick="myFunction()"
+            data-name="PC rx 9070xt"
+            data-price="1500"
+          >
+            Acheter
+          </button>
           <h3 class="popup2" onclick="showdesc(event, this)">
             Details
             <span class="descPopup"
@@ -77,7 +116,14 @@
           <img src="./object img/pc-gamer-vengeance.jpg" alt="image" />
           <h2>PC rtx 5060</h2>
           <h2>Prix : 1200€</h2>
-          <button class="popup" onclick="myFunction()">Acheter</button>
+          <button
+            class="popup add-to-cart btn btn-primary"
+            onclick="myFunction()"
+            data-name="PC rtx 5060"
+            data-price="1200"
+          >
+            Acheter
+          </button>
           <h3 class="popup2" onclick="showdesc(event, this)">
             Details
             <span class="descPopup"
@@ -97,7 +143,14 @@
           />
           <h2>PC rtx 4070</h2>
           <h2>Prix : 1000€</h2>
-          <button class="popup" onclick="myFunction()">Acheter</button>
+          <button
+            class="popup add-to-cart btn btn-primary"
+            onclick="myFunction()"
+            data-name="PC rtx 4070"
+            data-price="1000"
+          >
+            Acheter
+          </button>
           <h3 class="popup2" onclick="showdesc(event, this)">
             Details
             <span class="descPopup"
@@ -112,6 +165,44 @@
         </div>
       </section>
       <span class="popuptext" id="globalPopup">Ajouté au panier !</span>
+      <div
+        class="modal fade"
+        id="cart"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="show-cart table"></table>
+              <div>Prix Total: <span class="total-cart"></span>€</div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Order now</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <p>© 2025 Vente de produits</p>

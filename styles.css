@@ -16,6 +16,8 @@
     border-radius: 10px;
     text-align: center;
     width: 250px;
+    position: relative; /* Added for proper z-index handling */
+    overflow: hidden; /* Contains hover effect */
 }
 
 .card img {
@@ -24,11 +26,12 @@
     object-fit: cover;
     transition: 300ms;
     border-radius: 8px;
+    max-width: 100%; /* Prevent overflow */
 }
 
 .card img:hover {
-    width: 250px;
-    height: 250px;
+    width: 200px; /* Reduced from 250px */
+    height: 200px; /* Reduced from 250px */
 }
 
 .card h2, h3 {
@@ -62,13 +65,12 @@ h1{
 
 footer{
     text-align: center;
-    padding: auto  ;
+    padding: 10px 0;
     background-color: #222;
     color: white;
-    position:absolute;
-    bottom: 0;
+    position: relative;  /* Changed from absolute to relative */
     width: 100%;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .top button{
@@ -149,18 +151,141 @@ footer{
 
 .descPopup {
   position: fixed;
-  background-color: #555;
+  background-color: #333;
   color: #fff;
-  padding: 8px 12px;
+  padding: 15px;
   border-radius: 6px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s;
   left: 0;
   top: 0;
+  width: 250px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  text-align: left;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.descPopup.show {
-  visibility: visible;
-  opacity: 1;
+.descPopup br {
+    margin-bottom: 5px;
+}
+
+.link {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    padding: 8px 20px;
+    background: rgb(24, 24, 24);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.link:hover {
+    background: rgb(92, 91, 91);
+}
+
+/* Navbar fixes */
+.navbar {
+    background-color: #222 !important;
+    padding: 1rem !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.5rem !important;
+}
+
+/* Header and Navbar positioning */
+.top {
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cart-nav {
+    background: transparent !important;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    z-index: 1030;
+}
+
+/* Adjust main content padding */
+main {
+    padding-top: 20px !important;
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 200px);  /* Adjust for footer */
+    padding-bottom: 60px;  /* Space for footer */
+}
+
+/* Modal fixes */
+.modal-content {
+    background-color: #222 !important;
+    color: white !important;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #444 !important;
+}
+
+.modal .btn-primary {
+    background-color: #1626c7 !important;
+    border-color: #1626c7 !important;
+}
+
+.modal .btn-primary:hover {
+    background-color: #0f1a8a !important;
+}
+
+/* Table in modal fix */
+.table {
+    color: white !important;
+}
+
+.modal .close {
+    color: white !important;
+}
+
+/* Override Bootstrap button styles */
+.btn-primary {
+    background-color: #1626c7 !important;
+    border-color: #1626c7 !important;
+}
+
+.btn-primary:hover {
+    background-color: #0f1a8a !important;
+    border-color: #0f1a8a !important;
+}
+
+/* Footer fix */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    color: white;
+    position: relative;  /* Changed from absolute to relative */
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Modal overlay fix */
+.modal-backdrop {
+    display: none !important;  /* Remove dark overlay */
+}
+
+.modal {
+    background: transparent !important;
+}
+
+.modal-dialog {
+    margin: 70px auto !important;  /* Add top margin to modal */
 }
