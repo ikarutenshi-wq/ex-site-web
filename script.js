@@ -32,7 +32,7 @@ document.addEventListener('click', function() {
         p.classList.remove('show');
     });
 });
-
+// Code taken from this Website "https://codepen.io/Dimasion/pen/oBoqBM" because I found it very useful for a shopping cart feature.
 // ************************************************
 // Shopping Cart API
 // ************************************************
